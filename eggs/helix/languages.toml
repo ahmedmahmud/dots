@@ -1,0 +1,8 @@
+[[language]]
+name = "rhai"
+scope = "source.rhai"
+file-types = ["rhai"]
+
+[[grammar]]
+name = "rhai"
+source={git="https://github.com/elkowar/tree-sitter-rhai", rev="main"}
