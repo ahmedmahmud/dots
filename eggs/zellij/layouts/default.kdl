@@ -1,0 +1,42 @@
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
+                format_left   "{mode} #[fg=#89B4FA,bold]{session}{tabs}"
+                format_right  "{command_git_branch}"
+                format_space  ""
+
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=#6C7086]{char}"
+                border_position "top"
+
+                // mode_normal  "#[bg=blue] "
+                // mode_locked    "#[bg=#ffc387] "
+                mode_normal        "#[bg=green,fg=bg,bold] NORMAL "
+                mode_locked        "#[bg=red,fg=bg,bold] LOCKED "
+                mode_resize        "#[bg=blue,fg=bg,bold] RESIZE "
+                mode_pane          "#[bg=blue,fg=bg,bold] PANE "
+                mode_tab           "#[bg=yellow,fg=bg,bold] TAB "
+                mode_scroll        "#[bg=blue,fg=bg,bold] SCROLL "
+                mode_enter_search  "#[bg=orange,fg=bg,bold] ENT-SEARCH "
+                mode_search        "#[bg=orange,fg=bg,bold] SEARCHARCH "
+                mode_rename_tab    "#[bg=yellow,fg=bg,bold] RENAME-TAB "
+                mode_rename_pane   "#[bg=blue,fg=bg,bold] RENAME-PANE "
+                mode_session       "#[bg=blue,fg=bg,bold] SESSION "
+                mode_move          "#[bg=blue,fg=bg,bold] MOVE "
+                mode_prompt        "#[bg=blue,fg=bg,bold] PROMPT "
+                mode_tmux          "#[bg=magenta,fg=bg,bold] TMUX "
+
+                tab_normal   "#[fg=#6C7086] {name} "
+                tab_active   "#[fg=#9399B2,bold,italic] {name} "
+
+                command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
+                command_git_branch_format      "#[fg=blue] {stdout} "
+                command_git_branch_interval    "10"
+                command_git_branch_rendermode  "static"
+            }
+        }
+    }
+}
